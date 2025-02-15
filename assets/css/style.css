@@ -16,6 +16,8 @@
     padding: 25px;
     text-align: center;
     height: auto;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 
 .nom-contenneur{
