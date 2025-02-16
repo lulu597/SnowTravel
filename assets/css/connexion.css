@@ -42,6 +42,19 @@
     text-align: center;
 }
 
+.ul-button{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0;
+    flex-wrap: wrap;
+    overflow: auto;
+    width: 400px;
+    height: 200px;
+    gap: 25px;
+}
+
 .bouton-form{
     background: #B8CBD0;
     padding: 8px 15px;

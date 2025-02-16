@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/liste.css">
+  <link rel="stylesheet" href="assets/css/connexion.css">
+  <link rel="stylesheet" href="assets/css/reservation.css">
+</head>
+
+<body style="top: 0; left: 0; margin: 0; padding: 0; background: #B8CBD0">
+
+<div class="entete">
+  <div class="nom-contenneur">
+    <a href="index.html" class="nom-site">
+      SnowTravel
+    </a>
+  </div>
+  <div class="entete-droite">
+    <div class="bouton-contenneur">
+      <input type="text" placeholder="Rechercher..." class="barre-recherche">
+    </div>
+    <div class="bouton-contenneur">
+      <a href="liste.html" class="connexion-lien">
+        <button class="bouton">
+          Réserver
+        </button>
+      </a>
+    </div>
+    <div class="bouton-contenneur">
+      <a href="connexion.html" class="connexion-lien">
+        <button class="bouton">
+          Se connecter
+        </button>
+      </a>
+    </div>
+    <div class="bouton-contenneur">
+      <a href="profil.html">
+        <img src="assets/img/user.png" alt="icone utilisateur" height="50" width="50">
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="reservation-bloc">
+  <div class="bloc-description">
+    <div>
+      <h2 class="Nom-pays">Norvège</h2>
+    </div>
+    <div>
+      <details class="details-voayge">
+        <summary>Oslo</summary>
+          <p>
+            Visiter l’Opéra d’Oslo – Son architecture moderne est impressionnante, et on peut marcher sur son toit. <br>
+          </p>
+          <p>
+            Explorer le parc de sculptures de Vigeland – Un parc unique avec plus de 200 sculptures fascinantes. <br>
+          </p>
+          <p>
+            Découvrir le musée des navires vikings – Pour voir de vrais drakkars vikings (actuellement en rénovation jusqu’en 2026).<br>
+          </p>
+          <p>
+            Se promener sur Karl Johans Gate – La rue principale d’Oslo avec boutiques, restaurants et le Palais royal.<br>
+          </p>
+      </details>
+    </div>
+    <div>
+      <details class="details-voayge">
+        <summary>Bergen</summary>
+          <p>
+            Explorer Bryggen – Quartier historique avec ses maisons en bois colorées classées à l’UNESCO. <br>
+          </p>
+          <p>
+            Monter en funiculaire au mont Fløyen – Vue panoramique incroyable sur la ville et les fjords.<br>
+          </p>
+          <p>
+            Visiter l’aquarium de Bergen – Idéal pour voir des phoques, des pingouins et des poissons nordiques.<br>
+          </p>
+          <p>
+            Faire une croisière dans les fjords – Notamment le Sognefjord, l’un des plus longs et profonds au monde.<br>
+          </p>
+      </details>
+    </div>
+    <div>
+      <details class="details-voayge">
+        <summary>Tromsø</summary>
+          <p>
+            Observer les aurores boréales – De septembre à mars, c’est l’un des meilleurs endroits au monde pour les voir.
+          </p>
+          <p>
+            Visiter la cathédrale arctique – Une architecture spectaculaire inspirée des paysages nordiques. <br>
+          </p>
+          <p>
+            Faire un safari en traîneau à chiens – Expérience unique avec des huskies dans les paysages enneigés.<br>
+          </p>
+          <p>
+            Explorer le musée polaire – Pour en apprendre plus sur les expéditions en Arctique.<br>
+          </p>
+      </details>
+    </div>
+    <div>
+      <details class="details-voayge">
+        <summary>Stavanger</summary>
+        <p>
+          Randonner jusqu’au Preikestolen (Pulpit Rock) – Une falaise vertigineuse avec une vue imprenable sur le fjord Lysefjord. <br>
+        </p>
+        <p>
+          Explorer la vieille ville (Gamle Stavanger) – Quartier charmant avec des maisons blanches du XVIIIe siècle. <br>
+        </p>
+        <p>
+          Visiter le musée norvégien du pétrole – Découverte de l’histoire et de l’impact de l’industrie pétrolière en Norvège. <br>
+        </p>
+        <p>
+          Se détendre sur la plage de Sola – Belle plage de sable, idéale en été pour une balade ou du kitesurf. <br>
+        </p>
+      </details>
+    </div>
+
+  </div>
+  <div class="bloc-description">
+    <form action="...." method="post">
+
+      <div class="sous-partie">
+        <label for="depart" class="formu-lab">
+          Date de départ
+        </label>
+        <input type="date" id="depart" required class="input-formu" placeholder="jj/mm/aa">
+      </div>
+      <div class="sous-partie">
+        <label for="arrivee" class="formu-lab">
+          Date d'arrivée
+        </label>
+        <input type="date" id="arrivee" required class="input-formu" placeholder="jj/mm/aa">
+      </div>
+      <div class="sous-partie">
+        <label for="nombre" class="formu-lab">
+          Nombres de voyageurs
+        </label>
+        <input type="number" id="nombre" required class="input-formu" placeholder="Nombre...">
+      </div>
+      <div class="sous-partie">
+        <label for="vild" class="formu-lab">
+          Première ville
+        </label>
+        <select id="vild" required class="select-formu">
+          <option value="Oslo">Oslo</option>
+          <option value="Tromsø">Tromsø</option>
+          <option value="Stavanger">Stavanger</option>
+          <option value="Bergen">Bergen</option>
+        </select>
+      </div>
+      <div class="sous-partie">
+        <label for="vila" class="formu-lab">
+          Seconde ville
+        </label>
+        <select id="vila" required class="select-formu">
+          <option value="Oslo">Oslo</option>
+          <option value="Tromsø">Tromsø</option>
+          <option value="Stavanger">Stavanger</option>
+          <option value="Bergen">Bergen</option>
+        </select>
+      </div>
+      <div class="sous-partie">
+        <label for="a1" class="formu-lab">
+          Activité 1
+        </label>
+        <select id="a1" required class="select-formu">
+          <option value="Opéra">Opéra</option>
+          <option value="Parc de sculptures">Parc de sculptures</option>
+          <option value=" musée des navires vikings"> musée des navires vikings</option>
+          <option value="Promenade sur Karl Johans Gate">Promenade sur Karl Johans Gate</option>
+        </select>
+      </div>
+      <div class="sous-partie">
+        <label for="a2" class="formu-lab">
+          Activité 2
+        </label>
+        <select id="a2" required class="select-formu">
+          <option value="Explorer Bryggen">Explorer Bryggen</option>
+          <option value="funiculaire au mont Fløyen">funiculaire au mont Fløyen</option>
+          <option value="aquarium de Bergen">aquarium de Bergen</option>
+          <option value="croisière dans les fjords">croisière dans les fjords</option>
+        </select>
+      </div><div class="sous-partie">
+      <label for="a3" class="formu-lab">
+        Activité 3
+      </label>
+      <select id="a3" required class="select-formu">
+        <option value="Observer les aurores boréales">Observer les aurores boréales</option>
+        <option value="la cathédrale arctique">la cathédrale arctique</option>
+        <option value="Chiens de traîneaux">Chiens de traîneaux</option>
+        <option value="le musée polaire">le musée polaire</option>
+      </select>
+    </div>
+      <div class="sous-partie">
+        <label for="a4" class="formu-lab">
+          Activité 4
+        </label>
+        <select id="a4" required class="select-formu">
+          <option value="Randonner jusqu’au Preikestolen">Randonner jusqu’au Preikestolen</option>
+          <option value="Explorer la vieille ville">Explorer la vieille ville</option>
+          <option value="musée norvégien du pétrole">musée norvégien du pétrole</option>
+          <option value="la plage de Sola">la plage de Sola</option>
+        </select>
+      </div>
+
+      <div class="sous-partie" style="margin-top: 30px">
+        <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
+          Valider les options
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="bas-page">
+
+</div>
+
+</body>
+</html>
