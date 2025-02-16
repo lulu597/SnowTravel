@@ -43,3 +43,45 @@
     font-family: Arial, sans-serif;
     font-size: 20px;
 }
+
+.bloc-principal-centre-bis{
+    display: flex;
+    place-self: center;
+    justify-content: center;
+    align-items: center;
+    background: #344D59;
+    border-radius: 50px;
+    padding: 50px;
+    width: auto;
+    margin: 75px 0;
+}
+
+.list-utilisateur{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-uti{
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #344D59;
+}
+
+.info-uti-alt{
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #137C8B;
+}
+
+.bloc-liste-uti{
+    display: flex;
+    gap: 8px;
+    background: #B8CBD0;
+    border: 4px solid #344D59;
+    text-align: center;
+    padding: 10px;
+    border-radius: 30px;
+}
