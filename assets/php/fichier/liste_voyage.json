@@ -1,0 +1,12 @@
+[
+  {
+    "nom": "Razu",
+    "prenom": "Nico",
+    "mail": "doudou@gmail.com",
+    "mdp": "$2y$10$kAZwSXgycTggrKxg3qtti.77f1Nc7uz0JCxlUqrtLckBVQ2SWEb5i",
+    "grade": "administrateur",
+    "promotion": 0,
+    "photo": "2",
+    "fichier": "ZG91ZG91QGdtYWlsLmNvbQ==.json"
+  }
+]
