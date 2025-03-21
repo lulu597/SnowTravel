@@ -102,6 +102,27 @@
                     </p>
                 </div>
             </div>
+            <br>
+            <div class="sous-partie-statut">
+                <div style="display: flex">
+                    <a href="historique.php">
+                        <button class="bouton-form" style="max-width: 150px; place-self: center">
+                            Liste des réservations
+                        </button>
+                    </a>
+                </div>
+                <?php
+
+
+                if(isset($_GET['id'])){
+                        $verif = $_GET['id'];
+                        if($verif==12){
+                            echo "<p style='font-family: Arial, sans-serif; color: red; opacity: 50%'>Vous n'avez aucun voyage dans l'historique</p>";
+                        }
+                }
+
+                ?>
+            </div>
             <?php
                 if($utilisateur['grade'] == "administrateur"){
                     echo '<div class="sous-partie-profil" style="margin-top: 50px">
@@ -113,7 +134,6 @@
                            </div>';
                 }
             ?>
-
         </div>
     </div>
 </section>

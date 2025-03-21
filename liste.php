@@ -96,40 +96,94 @@ if(!isset($_SESSION['utilisateur'])){
 
 <section class="bloc-liste">
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=1">
         <img src="assets/img/destination1.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Norvège</div>
       </a>
     </div>
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=2">
         <img src="assets/img/destination2.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Canada</div>
       </a>
     </div>
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=3">
         <img src="assets/img/destination3.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Alaska</div>
       </a>
     </div>
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=4">
         <img src="assets/img/destination4.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Suède</div>
       </a>
     </div>
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=5">
         <img src="assets/img/destination5.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Finlande</div>
       </a>
     </div>
     <div class="image-destination">
-      <a href="reservation.php">
+      <a href="reservation.php?id=6">
         <img src="assets/img/destination6.png" width="600" height="400" style="border-radius: 30px">
         <div class="hover-text">Islande</div>
       </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=7">
+            <img src="assets/img/destination7.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Danemark</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=8">
+            <img src="assets/img/destination8.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Iles Féroé</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=9">
+            <img src="assets/img/destination9.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Groenland</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=10">
+            <img src="assets/img/destination10.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Estonie</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=11">
+            <img src="assets/img/destination11.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Lettonie</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=12">
+            <img src="assets/img/destination12.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Lituanie</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=13">
+            <img src="assets/img/destination13.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Ecosse</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=14">
+            <img src="assets/img/destination14.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Pologne</div>
+        </a>
+    </div>
+    <div class="image-destination">
+        <a href="reservation.php?id=15">
+            <img src="assets/img/destination15.png" width="600" height="400" style="border-radius: 30px">
+            <div class="hover-text">Irlande</div>
+        </a>
     </div>
 </section>
 

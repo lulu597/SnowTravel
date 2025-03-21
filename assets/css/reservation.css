@@ -1,23 +1,35 @@
 .reservation-bloc{
     display: flex;
-    justify-content: space-around;
-    align-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 75px 150px;
     background: #344D59;
     padding: 25px;
     border-radius: 30px;
+    gap: 50px;
 }
 
 .bloc-description{
     background: #709CA7;
     padding: 25px;
     border-radius: 30px;
-    height: 500px;
+    width: auto;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.bloc-description-2{
+    background: #709CA7;
+    padding: 25px;
+    border-radius: 30px;
     width: auto;
     overflow: auto;
     max-width: 400px;
     scrollbar-width: none;
+    height: auto;
+    max-height: 1000px;
 }
+
 
 .bloc-description p{
     text-align: left;
@@ -27,6 +39,27 @@
     border-radius: 10px;
     font-size: 15px;
     font-family: Arial, sans-serif;
+}
+
+.bloc-description-2 p{
+    text-align: left;
+    background: #137C8B;
+    color: #344D59;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.bloc-description-2 details{
+    text-align: left;
+    background: #137C8B;
+    color: #344D59;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    margin: 10px;
 }
 
 .bloc-description details{
@@ -47,5 +80,57 @@
     height: 35px;
     margin: 20px;
     padding: 0 15px;
+    place-self: center;
+}
+
+.bloc-region{
+    background: #137C8B;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: auto;
+}
+
+.lien,a:hover,a:active,a:visited{
+    color: #344D59;
+}
+
+.bloc-sous-region{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bloc-option{
+    background: #B8CBD0;
+    border-radius: 30px;
+    padding: 25px;
+    width: 200px;
+    height: 140px;
+}
+
+.bloc-option-valid{
+    background: #B8CBD0;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.bloc-option label{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+
+}
+
+.sous-partie-1{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.input-formu{
     place-self: center;
 }
