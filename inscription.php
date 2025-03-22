@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $mail=$_POST['mail'];
     $mdp=password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-    $fichier_utilisateur = "assets/php/fichier/reservations/utilisateurs.json";
+    $fichier_utilisateur = "assets/php/fichier/utilisateurs.json";
     $liste_utilisateurs = json_decode(file_get_contents($fichier_utilisateur), true);
     $duplication=false;
 
