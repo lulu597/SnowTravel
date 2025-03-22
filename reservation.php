@@ -281,7 +281,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
       </div>
       <div class="sous-partie">
         <label for="arrivee" class="formu-lab">
-          Date d'arrivée
+          Date de retour
         </label>
         <input name="fin" type="date" id="arrivee" required class="input-formu" placeholder="jj/mm/aa">
       </div>
