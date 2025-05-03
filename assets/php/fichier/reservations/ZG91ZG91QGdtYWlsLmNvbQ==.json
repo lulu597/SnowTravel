@@ -46,5 +46,29 @@
         "duree": 31,
         "prix": 5565,
         "reduction": "0"
+    },
+    {
+        "identifiant": "2",
+        "activite_1": "1",
+        "activite_2": "1",
+        "activite_3": "0",
+        "activite_4": "0",
+        "activite_5": "0",
+        "activite_6": "0",
+        "activite_7": "0",
+        "activite_8": "0",
+        "activite_9": "0",
+        "activite_10": "0",
+        "activite_11": "0",
+        "activite_12": "0",
+        "region_1": "1",
+        "region_2": "0",
+        "region_3": "1",
+        "debut": "2025-07-10",
+        "fin": "2025-07-19",
+        "personne": "2",
+        "duree": 9,
+        "prix": 4420,
+        "reduction": "0"
     }
 ]

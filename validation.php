@@ -36,13 +36,14 @@ $code_controle = md5($cle . "#" . $numero_transaction . "#" . $prix_transaction 
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link id="lien-theme" rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/theme.js" defer></script>
     <link rel="stylesheet" href="assets/css/liste.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/reservation.css">
 </head>
 
-<body style="top: 0; left: 0; margin: 0; padding: 0; background: #B8CBD0">
+<body class="corps">
 
 <div class="entete">
     <div class="nom-contenneur">
@@ -82,6 +83,9 @@ $code_controle = md5($cle . "#" . $numero_transaction . "#" . $prix_transaction 
             <a href="profil.php">
                 <img src="assets/img/Photo_profil/<?= $utilisateur['photo']?>.png" alt="icone utilisateur" height="50" width="50">
             </a>
+        </div>
+        <div class="bouton-contenneur">
+            <button class="bouton" id="changer-theme">Changer de thème</button>
         </div>
     </div>
 </div>
