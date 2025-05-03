@@ -272,7 +272,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
   </div>
   <div class="bloc-description">
-    <form action="reservation.php?id=<?= voyage['identifiant'] ?>" method="post">
+    <form action="reservation.php?id=<?= $voyage['identifiant'] ?>" method="post">
       <div class="sous-partie">
         <label  for="depart" class="formu-lab">
           Date de départ
