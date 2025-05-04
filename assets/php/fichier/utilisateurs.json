@@ -18,5 +18,15 @@
         "promotion": 100,
         "photo": 0,
         "fichier": "a2ltanVuZ3VuQGdtYWlsLmNvbQ==.json"
+    },
+    {
+        "nom": "sd",
+        "prenom": "ds",
+        "mail": "joronnoemie4@gmail.com",
+        "mdp": "$2y$12$1J1ngG2upt3HXnO2TL9k5.UbkWz0471udzuzzCk.ph3ls4QEeH4DO",
+        "grade": "utilisateur",
+        "promotion": 0,
+        "photo": "0",
+        "fichier": "am9yb25ub2VtaWU0QGdtYWlsLmNvbQ==.json"
     }
 ]
