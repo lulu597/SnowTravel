@@ -102,6 +102,15 @@ if($statut=="accepted"){
             ?>
         </div>
         <div class="bouton-contenneur">
+            <?php
+            if (isset($_SESSION['utilisateur'])){
+                echo '<a href="panier.php" class="connexion-lien">
+                            <img src="assets/img/panier.png" alt="icone utilisateur" height="30" width="30">
+                      </a>';
+            }
+            ?>
+        </div>
+        <div class="bouton-contenneur">
             <a href="profil.php">
                 <img src="assets/img/Photo_profil/<?= $utilisateur['photo']?>.png" alt="icone utilisateur" height="50" width="50">
             </a>
