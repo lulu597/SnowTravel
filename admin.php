@@ -7,6 +7,10 @@ if(!isset($_SESSION['utilisateur'])){
     $utilisateur=$_SESSION['utilisateur'];
 }
 
+if($utilisateur['grade']!='administrateur'){
+    header('Location:index.php');
+}
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $mail = $_POST['mail'];
     $bouton = $_POST['bouton'];

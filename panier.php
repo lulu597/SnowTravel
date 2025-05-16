@@ -33,6 +33,10 @@ $cle = getapikey($groupe);
 $numero_transaction=substr(bin2hex(random_bytes(12)), 0, 12);
 $prix_transaction = $_SESSION['choix_voyage']['prix'];
 $lien_retour="http://localhost:2112/achat.php";
+$vide=false;
+if($fichier_panier==[]){
+    $vide=true;
+}
 
 ?>
 
@@ -113,9 +117,16 @@ $lien_retour="http://localhost:2112/achat.php";
         $compteur = 1;
         $prix_total=0;
 
-        foreach ($fichier_panier as $index => $recap) {
-            $id_unique = md5($recap['debut'] . $recap['fin'] . $recap['prix']);
+        if ($vide){
             echo '
+                <div class="bloc-region" style="text-align: center; font-family: Arial, sans-serif; font-size: 25px">
+                    Panier Vide
+                </div>
+            ';
+        }else{
+            foreach ($fichier_panier as $index => $recap) {
+                $id_unique = md5($recap['debut'] . $recap['fin'] . $recap['prix']);
+                echo '
         <div class="bloc-region" data-id="' . $id_unique . '">
             <label style="text-align: center; font-family: Arial, sans-serif; font-size: 30px">Voyage du panier numéro ' . $compteur . '</label>
             <div class="panier-bloc">
@@ -136,8 +147,9 @@ $lien_retour="http://localhost:2112/achat.php";
             <button class="supprimer-voyage bouton-form" data-index="' . $index . '" data-id="' . $id_unique . '">Supprimer</button>
         </div>
             ';
-            $prix_total += $recap['prix'];
-            $compteur++;
+                $prix_total += $recap['prix'];
+                $compteur++;
+            }
         }
 
         $code_controle = md5($cle . "#" . $numero_transaction . "#" . $prix_total . "#" . $groupe . "#" . $lien_retour . "#");
@@ -166,20 +178,26 @@ $lien_retour="http://localhost:2112/achat.php";
                     <input type="hidden" name="retour" value="<?= $lien_retour ?>">
 
                     <input type="hidden" name="control" value="<?= $code_controle ?>">
+                    <?php
+                        if (!$vide){
+                            echo '
+                                <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
+                                    Valider le panier et payer
+                                 </button>
+                            ';
+                        }
+                    ?>
 
-                    <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
-                        Valider le panier et payer
-                    </button>
+
                 </form>
-                <a href="reservation.php?id=<?= $voyage['identifiant'] ?>">
-                    <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
-                        Modifier les options
-                    </button>
-                </a>
             </div>
     </section>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="bas-page">
 
 </div>

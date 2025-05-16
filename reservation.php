@@ -68,11 +68,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }
 
     if(($choix_voyage['region_1'] == 0 &&
-            ($choix_voyage['activite_1'] == 1 || $choix_voyage['activite_2'] == 1 || $choix_voyage['activite_3'] == 1 || $choix_voyage['activite_4'])) ||
+            ($choix_voyage['activite_1'] == 1 || $choix_voyage['activite_2'] == 1 || $choix_voyage['activite_3'] == 1 || $choix_voyage['activite_4'] == 1)) ||
         ($choix_voyage['region_2'] == 0 &&
-            ($choix_voyage['activite_5'] == 1 || $choix_voyage['activite_6'] == 1 || $choix_voyage['activite_7'] == 1 || $choix_voyage['activite_8'])) ||
+            ($choix_voyage['activite_5'] == 1 || $choix_voyage['activite_6'] == 1 || $choix_voyage['activite_7'] == 1 || $choix_voyage['activite_8'] == 1)) ||
         ($choix_voyage['region_3'] == 0 &&
-            ($choix_voyage['activite_9'] == 1 || $choix_voyage['activite_10'] == 1 || $choix_voyage['activite_11'] == 1 || $choix_voyage['activite_12']))
+            ($choix_voyage['activite_9'] == 1 || $choix_voyage['activite_10'] == 1 || $choix_voyage['activite_11'] == 1 || $choix_voyage['activite_12'] == 1))
     ){
         die("vous avez choisi une activité sans choisir la région dans laquelle elle est incluse");
     }
@@ -168,7 +168,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <link rel="stylesheet" href="assets/css/reservation.css">
     <link id="lien-theme" rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/theme.js" defer></script>
-    <script src="/assets/javascript/prix.js" defer></script>
+    <script src="assets/javascript/optionsAsync.js" defer></script>
 </head>
 
 <body class="corps">
@@ -286,7 +286,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     </div>
     <div class="bloc-description">
-        <form action="reservation.php?id=<?= $voyage['identifiant'] ?>" method="post" id="formulaire">
+        <action="reservation.php?id=<?= $voyage['identifiant'] ?>" method="post" id="formulaire">
             <div class="sous-partie">
                 <label  for="depart" class="formu-lab">
                     Date de départ
@@ -319,6 +319,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             }
             ?>
 
+            <input type="hidden" data-id="<?= $voyage["identifiant"] ?>" id="ident">
+
             <div class="sous-partie-1">
                 <div class="bloc-region">
                     <div>
@@ -329,37 +331,37 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     <div class="bloc-option">
                         <input class="select-formu" type="hidden" name="region_1" value="0">
                         <label style="text-align: left"><?= $voyage["region_1"] ?></label>
-                        <input class="select-formu" type="checkbox" name="region_1" value="1" id="region1">
+                        <input data-nom="region_1_prix" class="select-formu" type="checkbox" name="region_1" value="1" id="region1">
                         <label style="text-align: right" for="region1"><?= $voyage["region_1_prix"] ?>€</label>
                     </div>
-                    <div>
-                        <label for="a1" class="formu-lab">
+                    <div id="bloc-nom-1" style="display: none">
+                        <label for="a1" class="formu-lab" >
                             Activité de la Région 1
                         </label>
                     </div>
-                    <div class="bloc-sous-region">
+                    <div class="bloc-sous-region" id="bloc-region-1" style="display: none">
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_1" value="0">
                             <label style="text-align: left"><?= $voyage["activite_1"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_1" value="1" id="activite1">
+                            <input data-nom="activite_1_prix" class="select-formu" type="checkbox" name="activite_1" value="1" id="activite1">
                             <label style="text-align: right" for="activite1"><?= $voyage["activite_1_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_2" value="0">
                             <label style="text-align: left"><?= $voyage["activite_2"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_2" value="1" id="activite2">
+                            <input data-nom="activite_2_prix" class="select-formu" type="checkbox" name="activite_2" value="1" id="activite2">
                             <label style="text-align: right" for="activite2"><?= $voyage["activite_2_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_3" value="0">
                             <label style="text-align: left"><?= $voyage["activite_3"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_3" value="1" id="activite3">
+                            <input data-nom="activite_3_prix" class="select-formu" type="checkbox" name="activite_3" value="1" id="activite3">
                             <label style="text-align: right" for="activite3"><?= $voyage["activite_3_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_4" value="0">
                             <label style="text-align: left"><?= $voyage["activite_4"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_4" value="1" id="activite4">
+                            <input data-nom="activite_4_prix" class="select-formu" type="checkbox" name="activite_4" value="1" id="activite4">
                             <label style="text-align: right" for="activite4"><?= $voyage["activite_4_prix"] ?>€</label>
                         </div>
                     </div>
@@ -374,37 +376,37 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     <div class="bloc-option">
                         <input class="select-formu" type="hidden" name="region_2" value="0">
                         <label style="text-align: left"><?= $voyage["region_2"] ?></label>
-                        <input class="select-formu" type="checkbox" name="region_2" value="1" id="region2">
+                        <input data-nom="region_2_prix" class="select-formu" type="checkbox" name="region_2" value="1" id="region2">
                         <label style="text-align: right" for="region2"><?= $voyage["region_2_prix"] ?>€</label>
                     </div>
-                    <div>
+                    <div id="bloc-nom-2" style="display: none">
                         <label for="a1" class="formu-lab">
                             Activité de la Région 2
                         </label>
                     </div>
-                    <div class="bloc-sous-region">
+                    <div class="bloc-sous-region" id="bloc-region-2" style="display: none">
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_5" value="0">
                             <label style="text-align: left"><?= $voyage["activite_5"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_5" value="1" id="activite5">
+                            <input data-nom="activite_5_prix" class="select-formu" type="checkbox" name="activite_5" value="1" id="activite5">
                             <label style="text-align: right" for="activite5"><?= $voyage["activite_5_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_6" value="0">
                             <label style="text-align: left"><?= $voyage["activite_6"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_6" value="1" id="activite6">
+                            <input data-nom="activite_6_prix" class="select-formu" type="checkbox" name="activite_6" value="1" id="activite6">
                             <label style="text-align: right" for="activite6"><?= $voyage["activite_6_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_7" value="0">
                             <label style="text-align: left"><?= $voyage["activite_7"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_7" value="1" id="activite7">
+                            <input data-nom="activite_7_prix" class="select-formu" type="checkbox" name="activite_7" value="1" id="activite7">
                             <label style="text-align: right" for="activite7"><?= $voyage["activite_7_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_8" value="0">
                             <label style="text-align: left"><?= $voyage["activite_8"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_8" value="1" id="activite8">
+                            <input data-nom="activite_8_prix" class="select-formu" type="checkbox" name="activite_8" value="1" id="activite8">
                             <label style="text-align: right" for="activite8"><?= $voyage["activite_8_prix"] ?>€</label>
                         </div>
                     </div>
@@ -419,37 +421,37 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     <div class="bloc-option">
                         <input class="select-formu" type="hidden" name="region_3" value="0">
                         <label style="text-align: left"><?= $voyage["region_3"] ?></label>
-                        <input class="select-formu" type="checkbox" name="region_3" value="1" id="region3">
+                        <input data-nom="region_3_prix" class="select-formu" type="checkbox" name="region_3" value="1" id="region3">
                         <label style="text-align: right" for="region3"><?= $voyage["region_3_prix"] ?>€</label>
                     </div>
-                    <div>
+                    <div id="bloc-nom-3" style="display: none">
                         <label for="a1" class="formu-lab">
                             Activité de la Région 3
                         </label>
                     </div>
-                    <div class="bloc-sous-region">
+                    <div class="bloc-sous-region" id="bloc-region-3" style="display: none">
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_9" value="0">
                             <label style="text-align: left"><?= $voyage["activite_9"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_9" value="1" id="activite9">
+                            <input data-nom="activite_9_prix" class="select-formu" type="checkbox" name="activite_9" value="1" id="activite9">
                             <label style="text-align: right" for="activite9"><?= $voyage["activite_9_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_10" value="0">
                             <label style="text-align: left"><?= $voyage["activite_10"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_10" value="1" id="activite10">
+                            <input data-nom="activite_10_prix" class="select-formu" type="checkbox" name="activite_10" value="1" id="activite10">
                             <label style="text-align: right" for="activite10"><?= $voyage["activite_10_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_11" value="0">
                             <label style="text-align: left"><?= $voyage["activite_11"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_11" value="1" id="activite11">
+                            <input data-nom="activite_11_prix" class="select-formu" type="checkbox" name="activite_11" value="1" id="activite11">
                             <label style="text-align: right" for="activite11"><?= $voyage["activite_11_prix"] ?>€</label>
                         </div>
                         <div class="bloc-option">
                             <input class="select-formu" type="hidden" name="activite_12" value="0">
                             <label style="text-align: left"><?= $voyage["activite_12"] ?></label>
-                            <input class="select-formu" type="checkbox" name="activite_12" value="1" id="activite12">
+                            <input data-nom="activite_12_prix" class="select-formu" type="checkbox" name="activite_12" value="1" id="activite12">
                             <label style="text-align: right" for="activite12"><?= $voyage["activite_12_prix"] ?>€</label>
                         </div>
                     </div>
@@ -469,6 +471,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </section>
 
 <span id="prix-minimum" style="display:none;"><?= $voyage['prix_minimum'] ?></span>
+
 
 
 
