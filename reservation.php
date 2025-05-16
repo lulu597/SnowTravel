@@ -458,10 +458,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         </form>
     </div>
 </section>
-<!-- Prix minimum pour JS -->
+
 <span id="prix-minimum" style="display:none;"><?= $voyage['prix_minimum'] ?></span>
 
-<!-- Affichage prix -->
+
 
 <div class="bas-page">
 

@@ -142,6 +142,15 @@
     place-self: center;
 }
 
+.panier-bloc{
+    display: flex;
+    gap: 30px;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    justify-content: space-between;
+}
+
 
 #709CA7
 #7A90A4

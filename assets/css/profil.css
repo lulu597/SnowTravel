@@ -4,6 +4,45 @@
     padding: 30px;
 }
 
+.input-profile{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    place-content: center;
+    gap: 10px;
+}
+
+.bouton-modifier{
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-content: center;
+    border: #344D59 solid 3px;
+    padding: 2px;
+    margin-top: 17px;
+}
+
+.bouton-annuler{
+    border-radius: 30px;
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-content: center;
+    border: #344D59 solid 3px;
+    margin-top: 20px;
+}
+
+.bouton-sauvegarder{
+    border-radius: 30px;
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-content: center;
+    border: #344D59 solid 3px;
+    margin-top: 20px;
+}
+
 .sous-partie-profil {
     display: flex;
     flex-direction: column;

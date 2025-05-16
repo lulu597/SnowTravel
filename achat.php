@@ -11,10 +11,27 @@ $statut=$_GET['status'];
 
 $choix_voyage=$_SESSION['choix_voyage'];
 
+$panier = 'assets/php/fichier/panier/' . $utilisateur['fichier'];
+
+if(!file_exists($panier)){
+    file_put_contents($panier, json_encode([]));
+}
+
+$fichier_panier = json_decode(file_get_contents($panier), true);
+
 if($statut=="accepted"){
-    if($choix_voyage['reduction'] == 1){
+    $reductionnn = 0;
+
+    foreach ($fichier_panier as $fichier){
+        if ($fichier['reduction']=="1"){
+            $reductionnn = 1;
+        }
+    }
+
+    if($reductionnn == 1){
         $utilisateur['promotion']=0;
     }
+
     $fichier_voyage = "assets/php/fichier/reservations/" . $_SESSION['utilisateur']['fichier'];
     $fichier = json_decode(file_get_contents($fichier_voyage), true);
 
@@ -22,22 +39,13 @@ if($statut=="accepted"){
         $fichier = [];
     }
 
-    $doublon = false;
+    $fichier = array_merge($fichier, $fichier_panier);
 
-    if($fichier!=[]){
-        foreach ($fichier as $fich) {
-            if($fich['debut'] == $_SESSION['choix_voyage']['debut']){
-                $doublon = true;
-            }
-        }
-    }
+    file_put_contents($fichier_voyage, json_encode($fichier, JSON_PRETTY_PRINT));
 
-    if(!$doublon){
-        $fichier[]=$choix_voyage;
-        if (file_put_contents($fichier_voyage, json_encode($fichier, JSON_PRETTY_PRINT)) === false) {
-            die("Erreur de sauvegarde.");
-        }
-    }
+    file_put_contents($panier, json_encode([]));
+
+
 }
 
 

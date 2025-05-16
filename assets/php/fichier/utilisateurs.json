@@ -1,12 +1,12 @@
 [
     {
-        "nom": "Razu",
-        "prenom": "Nico",
+        "nom": "Razuz",
+        "prenom": "Nicod",
         "mail": "doudou@gmail.com",
-        "mdp": "$2y$10$kAZwSXgycTggrKxg3qtti.77f1Nc7uz0JCxlUqrtLckBVQ2SWEb5i",
+        "mdp": "$2y$10$EU4Ii\/4mDghr9fuq4Kg0rOlHMMVK3NAJ95A2LngcKkQL77C1q\/g9u",
         "grade": "administrateur",
         "promotion": 0,
-        "photo": "2",
+        "photo": "0",
         "fichier": "ZG91ZG91QGdtYWlsLmNvbQ==.json"
     },
     {
@@ -28,5 +28,25 @@
         "promotion": 0,
         "photo": "0",
         "fichier": "am9yb25ub2VtaWU0QGdtYWlsLmNvbQ==.json"
+    },
+    {
+        "nom": "Denon Capovilla",
+        "prenom": "Alessio",
+        "mail": "razu@gmail.com",
+        "mdp": "$2y$10$P\/EV62V8ApmOzPJyp48fteLuguqAx6EwnEOBlaYdH1MZCxehsZgCa",
+        "grade": "utilisateur",
+        "promotion": 0,
+        "photo": "0",
+        "fichier": "cmF6dUBnbWFpbC5jb20=.json"
+    },
+    {
+        "nom": "Denon Capovilla",
+        "prenom": "Alessio",
+        "mail": "jsmith@mail.com",
+        "mdp": "$2y$10$HNhbipZwS6rt2PLHIJsWROxvI0tmmI2HeYmILN\/MbPlfCvKenMZpW",
+        "grade": "utilisateur",
+        "promotion": 0,
+        "photo": 0,
+        "fichier": "anNtaXRoQG1haWwuY29t.json"
     }
 ]

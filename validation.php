@@ -346,27 +346,19 @@ $code_controle = md5($cle . "#" . $numero_transaction . "#" . $prix_transaction 
 
 
             <div style="margin-top: 30px; display: flex; gap 25px; width: 600px; justify-content: space-evenly; place-self: center">
-                <form method="post" action="https://www.plateforme-smc.fr/cybank/index.php">
 
-                    <input type="hidden" name="transaction" value="<?= $numero_transaction ?>">
-
-                    <input type="hidden" name="montant" value="<?= $prix_transaction ?>">
-
-                    <input type="hidden" name="vendeur" value="<?= $groupe ?>">
-
-                    <input type="hidden" name="retour" value="<?= $lien_retour ?>">
-
-                    <input type="hidden" name="control" value="<?= $code_controle ?>">
-
-                    <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
-                        Valider l'achat et payer
+                <a href="assets/php/ajouterPanier.php">
+                    <button class="bouton-form" style="max-width: 150px; place-self: center">
+                        Valider l'achat et ajouter au panier
                     </button>
-                </form>
+                </a>
+
                 <a href="reservation.php?id=<?= $voyage['identifiant'] ?>">
                     <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
                         Modifier les options
                     </button>
                 </a>
+
             </div>
     </section>
 

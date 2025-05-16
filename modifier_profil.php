@@ -28,20 +28,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $fichier_utilisateur = "assets/php/fichier/utilisateurs.json";
     $liste_utilisateurs = json_decode(file_get_contents($fichier_utilisateur), true);
 
-        foreach ($liste_utilisateurs as &$nouvelle_utilisateur) {
-            if($nouvelle_utilisateur['mail']==$utilisateur["mail"]) {
-                $nouvelle_utilisateur=["nom"=>$nom,"prenom"=>$prenom,"mail"=>$mail,"mdp"=>$mdp,"grade"=>$utilisateur['grade'], "promotion"=>$utilisateur['promotion'], "photo"=>$photo, "fichier"=>$utilisateur['fichier'] ];
-                $_SESSION['utilisateur']=$nouvelle_utilisateur;
-            }
+    foreach ($liste_utilisateurs as &$nouvelle_utilisateur) {
+        if($nouvelle_utilisateur['mail']==$utilisateur["mail"]) {
+            $nouvelle_utilisateur=["nom"=>$nom,"prenom"=>$prenom,"mail"=>$mail,"mdp"=>$mdp,"grade"=>$utilisateur['grade'], "promotion"=>$utilisateur['promotion'], "photo"=>$photo, "fichier"=>$utilisateur['fichier'] ];
+            $_SESSION['utilisateur']=$nouvelle_utilisateur;
         }
+    }
 
-        if(file_put_contents($fichier_utilisateur, json_encode($liste_utilisateurs, JSON_PRETTY_PRINT)) === false){
-            die("Erreur lors de l'enregistrement du fichier");
-        }
+    if(file_put_contents($fichier_utilisateur, json_encode($liste_utilisateurs, JSON_PRETTY_PRINT)) === false){
+        die("Erreur lors de l'enregistrement du fichier");
+    }
 
 
-        header('Location:profil.php');
-        exit();
+    header('Location:profil.php');
+    exit();
 }
 
 ?>

@@ -62,6 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link id="lien-theme" rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/theme.js" defer></script>
+    <script src="assets/javascript/formulaire.js" defer></script>
 </head>
 
 <body class="corps">
@@ -125,7 +126,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <label for="mdp" class="formu-lab">
                         Mot de passe
                     </label>
-                    <input type="password" name="mdp" id="mdp" required class="input-formu" placeholder="Mot de passe...">
+                    <div style="display: flex; text-align: center; justify-content: center; align-items: center; font-family: Arial, sans-serif">
+                        <input type="password" name="mdp" id="mdp" required class="input-formu" placeholder="Mot de passe..." maxlength="50">
+                    </div>
                 </div>
                 <div class="sous-partie">
                     <button type="submit" class="bouton-form" style="max-width: 150px; place-self: center">
