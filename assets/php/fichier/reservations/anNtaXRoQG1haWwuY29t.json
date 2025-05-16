@@ -94,5 +94,29 @@
         "duree": 1,
         "prix": 900,
         "reduction": "0"
+    },
+    {
+        "identifiant": "1",
+        "activite_1": "0",
+        "activite_2": "1",
+        "activite_3": "1",
+        "activite_4": "0",
+        "activite_5": "0",
+        "activite_6": "1",
+        "activite_7": "1",
+        "activite_8": "0",
+        "activite_9": "0",
+        "activite_10": "0",
+        "activite_11": "0",
+        "activite_12": "0",
+        "region_1": "1",
+        "region_2": "1",
+        "region_3": "0",
+        "debut": "2025-08-16",
+        "fin": "2025-08-31",
+        "personne": "2",
+        "duree": 15,
+        "prix": 0,
+        "reduction": "1"
     }
 ]

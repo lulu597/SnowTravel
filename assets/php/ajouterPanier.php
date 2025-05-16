@@ -12,6 +12,10 @@ $fichier_voyage = "assets/php/fichier/liste_voyage.json";
 
 $choix_voyage=$_SESSION['choix_voyage'];
 
+if($choix_voyage['reduction'] == 1){
+    $choix_voyage['prix']=0;
+}
+
 $voyage=$_SESSION['voyage'];
 
 $panier = 'fichier/panier/' . $utilisateur['fichier'];

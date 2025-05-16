@@ -146,6 +146,19 @@ if(!isset($_SESSION['utilisateur'])){
                 ?>
             </div>
             <?php
+            if($utilisateur['promotion'] == 100){
+                echo '<div class="sous-partie-profil" style="margin-top: 50px" >
+                                <a href="liste.php">
+                                    <button class="bouton-form" style="max-width: 150px; place-self: center; background: #0C5A63; color: #A3B1BE">
+                                         Vous avez un voyage
+                                         <br>
+                                         !!!! offert !!!!
+                                    </button>
+                                </a>
+                           </div>';
+            }
+            ?>
+            <?php
             if($utilisateur['grade'] == "administrateur"){
                 echo '<div class="sous-partie-profil" style="margin-top: 50px">
                                 <a href="admin.php">

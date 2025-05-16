@@ -11,57 +11,6 @@ if($utilisateur['grade']!='administrateur'){
     header('Location:index.php');
 }
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $mail = $_POST['mail'];
-    $bouton = $_POST['bouton'];
-
-    switch ($bouton) {
-        case 'VIP':
-            $action="VIP";
-            break;
-        case 'promouvoir':
-            $action="administrateur";
-            break;
-        case 'ban':
-            $action="ban";
-            break;
-        case 'retrograder':
-        case 'deban':
-            $action="utilisateur";
-            break;
-        case 'promotion':
-            $action="promo";
-            break;
-    }
-
-    $fichier_utilisateurs = "assets/php/fichier/utilisateurs.json";
-    if(file_exists($fichier_utilisateurs)){
-        $liste_utilisateurs = json_decode(file_get_contents($fichier_utilisateurs), true);
-        foreach ($liste_utilisateurs as &$utilisateurs) {
-            if($utilisateurs['mail']==$mail){
-                if($action=="promo"){
-                    $utilisateurs['promotion']=100;
-                    if($utilisateur['mail']==$mail){
-                        $_SESSION['utilisateur']['promotion']=$utilisateurs['promotion'];
-                    }
-                }else{
-                    $utilisateurs['grade']=$action;
-                    if($utilisateur['mail']==$mail){
-                        $_SESSION['utilisateur']['grade']=$utilisateurs['grade'];
-                    }
-                }
-            }
-        }
-
-        if(file_put_contents($fichier_utilisateurs, json_encode($liste_utilisateurs, JSON_PRETTY_PRINT)) === false){
-        die("Erreur lors de l'enregistrement du fichier");
-        }
-
-        header('Location:admin.php');
-        exit();
-    }
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -75,6 +24,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   <link rel="stylesheet" href="assets/css/profil.css">
     <link id="lien-theme" rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/theme.js" defer></script>
+    <script src="assets/javascript/adminAsync.js" defer></script>
 </head>
 
 <body class="corps">
@@ -133,7 +83,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   </div>
 </div>
 
-<section class="bloc-principal-centre">
+<section class="bloc-principal-centre" style="max-width: 800px">
   <div class="profil-div">
     <div>
       <div style="display: flex; align-content: center;">
@@ -143,11 +93,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 Panneau administrateur
               </h1>
             </li>
-            <li class="list-reservation">
+            <li class="list-reservation" style="width: ">
               <p style="font-family: 'Arial', sans-serif; font-size: 30px; color: white">Changer le statut d'un utilisateur</p>
-              <form action="admin.php" method="post">
-                <input name="mail" type="email" required placeholder="Mail du compte..." class="input-formu">
-                <ul class="ul-button">
+
+                <input id="emailcode" name="mail" type="email" required placeholder="Mail du compte..." class="input-formu">
+                <ul class="ul-button-2">
                   <li>
                     <button name="bouton" class="bouton-form" type="submit" value="VIP">
                       Ajouter le statut VIP
@@ -179,24 +129,31 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     </button>
                   </li>
                 </ul>
-              </form>
+
             </li>
           </ul>
         </div>
       </div>
       <div class="sous-partie-profil" style="margin-top: 50px">
-        <a href="profil.php">
-          <button class="bouton-form" style="max-width: 150px; place-self: center">
-            Profil
+
+          <img id="loader" src="assets/img/gif/chargement.gif" alt="Chargement..." style="display:none; width: 40px; height: 40px; place-self: center">
+
+      </div>
+      <div class="sous-partie-profil" style="margin-top: 50px">
+
+          <button class="bouton-form-17" style="max-width: 150px; place-self: center">
+              <a href="profil.php" style="text-decoration: none; color: #1E2A30">
+                    Profil
+              </a>
           </button>
-        </a>
+
 
       </div>
     </div>
 </section>
 
-<section class="bloc-principal-centre">
-  <div class="profil-div">
+<section class="bloc-principal-centre" style="max-width: 800px">
+  <div class="profil-div" style="width: auto">
     <div>
       <div style="display: flex; align-content: center;">
         <ul style="padding: 0 40px; font-family: 'Arial', sans-serif; list-style: none">
@@ -213,19 +170,16 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     foreach ($liste_utilisateurs as $utilisateurs) {
                         echo '<li class="bloc-liste-uti">
                                   <p class="info-uti">
-                                      '. $utilisateur['nom'] .'
+                                      '. $utilisateurs['nom'] .'
                                   </p>
                                   <p class="info-uti-alt">
-                                      '. $utilisateur['prenom'] .'
+                                      '. $utilisateurs['prenom'] .'
                                   </p>
                                   <p class="info-uti">
-                                      '. $utilisateur['mail'] .'
+                                      '. $utilisateurs['mail'] .'
                                   </p>
                                   <p class="info-uti-alt">
-                                      *******
-                                  </p>
-                                  <p class="info-uti">
-                                      '. $utilisateur['grade'] .'
+                                      '. $utilisateurs['grade'] .'
                                   </p>
                              </li>';
                     }

@@ -34,7 +34,7 @@
         "prenom": "Alessio",
         "mail": "razu@gmail.com",
         "mdp": "$2y$10$P\/EV62V8ApmOzPJyp48fteLuguqAx6EwnEOBlaYdH1MZCxehsZgCa",
-        "grade": "utilisateur",
+        "grade": "ban",
         "promotion": 0,
         "photo": "0",
         "fichier": "cmF6dUBnbWFpbC5jb20=.json"
@@ -44,8 +44,8 @@
         "prenom": "Alessio",
         "mail": "jsmith@mail.com",
         "mdp": "$2y$10$HNhbipZwS6rt2PLHIJsWROxvI0tmmI2HeYmILN\/MbPlfCvKenMZpW",
-        "grade": "utilisateur",
-        "promotion": 0,
+        "grade": "administrateur",
+        "promotion": 100,
         "photo": "5",
         "fichier": "anNtaXRoQG1haWwuY29t.json"
     }

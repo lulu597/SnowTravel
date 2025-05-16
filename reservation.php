@@ -101,40 +101,40 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $montant_total=$choix_voyage['duree']*$voyage['prix_minimum'];
 
     if($choix_voyage['activite_1']==1){
-        $montant_total+=$voyage['activite_1_prix'];
+        $montant_total+=$voyage['activite_1_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_2']==1){
-        $montant_total+=$voyage['activite_2_prix'];
+        $montant_total+=$voyage['activite_2_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_3']==1){
-        $montant_total+=$voyage['activite_3_prix'];
+        $montant_total+=$voyage['activite_3_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_4']==1){
-        $montant_total+=$voyage['activite_4_prix'];
+        $montant_total+=$voyage['activite_4_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_5']==1){
-        $montant_total+=$voyage['activite_5_prix'];
+        $montant_total+=$voyage['activite_5_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_6']==1){
-        $montant_total+=$voyage['activite_6_prix'];
+        $montant_total+=$voyage['activite_6_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_7']==1){
-        $montant_total+=$voyage['activite_7_prix'];
+        $montant_total+=$voyage['activite_7_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_8']==1){
-        $montant_total+=$voyage['activite_8_prix'];
+        $montant_total+=$voyage['activite_8_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_9']==1){
-        $montant_total+=$voyage['activite_9_prix'];
+        $montant_total+=$voyage['activite_9_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_10']==1){
-        $montant_total+=$voyage['activite_10_prix'];
+        $montant_total+=$voyage['activite_10_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_11']==1){
-        $montant_total+=$voyage['activite_11_prix'];
+        $montant_total+=$voyage['activite_11_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['activite_12']==1){
-        $montant_total+=$voyage['activite_12_prix'];
+        $montant_total+=$voyage['activite_12_prix']*$choix_voyage['personne'];
     }
     if($choix_voyage['region_1']==1){
         $montant_total+=$voyage['region_1_prix'];
@@ -146,7 +146,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $montant_total+=$voyage['region_3_prix'];
     }
 
-    $montant_total*=$choix_voyage['personne'];
+
 
     $choix_voyage['prix']=$montant_total;
 
@@ -286,7 +286,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     </div>
     <div class="bloc-description">
-        <action="reservation.php?id=<?= $voyage['identifiant'] ?>" method="post" id="formulaire">
+        <form action="reservation.php?id=<?= $voyage['identifiant'] ?>" method="post" id="formulaire">
             <div class="sous-partie">
                 <label  for="depart" class="formu-lab">
                     Date de départ
