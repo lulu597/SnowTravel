@@ -21,7 +21,7 @@
 **Prérequis :**
 
 * Serveur local (Apache avec PHP, ex : XAMPP, WAMP, MAMP)
-* Base de données MySQL (voir ci-dessous pour l’import)
+* Base de données MySQL 
 
 **Étapes :**
 
@@ -34,7 +34,6 @@
 ### Auteurs
 
 Projet réalisé par JORON Noémie, ARNOULD Alix et VETTORETTO Lucie.
-(Consulter les documents PDF pour plus d’informations)
 
 
 ### Licence
