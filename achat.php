@@ -33,11 +33,14 @@ if($statut=="accepted"){
     }
 
     $fichier_voyage = "assets/php/fichier/reservations/" . $_SESSION['utilisateur']['fichier'];
+
+    if(!file_exists($fichier_voyage)){
+        file_put_contents($fichier_voyage, json_encode([]));
+    }
+
     $fichier = json_decode(file_get_contents($fichier_voyage), true);
 
-    if ($fichier == null) {
-        $fichier = [];
-    }
+
 
     $fichier = array_merge($fichier, $fichier_panier);
 
