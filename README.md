@@ -21,12 +21,11 @@
 **Prérequis :**
 
 * Serveur local (Apache avec PHP, ex : XAMPP, WAMP, MAMP)
-* Base de données MySQL 
 
 **Étapes :**
 
 1. Extraire l’archive dans le dossier de votre serveur local
-2. Démarrer Apache et MySQL
+2. Démarrer Apache
 3. Importer le fichier SQL de la base de données fourni (le cas échéant)
 4. Accéder au site à l’adresse : [http://localhost:2112](http://localhost:2112)
 
