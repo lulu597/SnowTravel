@@ -26,8 +26,7 @@
 
 1. Extraire l’archive dans le dossier de votre serveur local
 2. Démarrer Apache
-3. Importer le fichier SQL de la base de données fourni (le cas échéant)
-4. Accéder au site à l’adresse : [http://localhost:2112](http://localhost:2112)
+3. Accéder au site à l’adresse : [http://localhost:2112](http://localhost:2112)
 
 
 ### Auteurs
